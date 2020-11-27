@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>team2G</title>
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</head>
+<style>
+  body {
+    font-family: "Ubuntu", sans-serif;
+  }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+<body>
+
+    <!-- Header -->
+    <div class="lg:flex justify-between items-center py-2 w-full shadow-xl">
+      <div class="flex items-center my-2">
+        <a class="flex items-center" href="index.html">
+          <img class="mt-auto mb-auto pl-12 pr-3" src="./assets/microchip.svg" alt="" style="height: 60px" />
+          <div class="font-bold text-xl">Team Embedded Systems</div>
+      </a>
+      </div>
+      <div class="lg:flex justify-between pl-10 lg:pl-0 pr-12">
+          <a href="making.html">
+              <div class="mx-4 text-xl">How we made?</div>
+          </a>
+        
+        <a href="./statistics.html">
+          <div class="mx-4 text-xl">Statistics!</div>
+      </a>
+  
+      <a href="contact.html">
+          <div class="mx-4 text-xl">Who are we??</div>
+      </a>
+        
+      </div>
+  
+  
+    </div>
+    <!-- Statistics -->
+    <div id="statistics"> 
+        <canvas class="px-12 my-12" id="chart"></canvas>
+    </div>
+    <!-- Footer -->
+  <footer class="flex">
+    <div class="mt-auto w-full">
+      <div class="bg-gray-300 w-full p-4 mt-16">
+        <div class="text-center text-xl font-bold">
+          An Initiative by, Embedded System Cells
+        </div>
+        <hr>
+        
+        <div class="text-center">
+          Bannari Amman Institute of Technology
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+<script>
+    var myChart = document.getElementById('chart').getContext('2d')
+
+Chart.defaults.global.defaultFontFamily = 'Ubuntu';
+Chart.defaults.global.defaultFontSize = 18;
+let stat = new Chart(myChart,{
+ type:'horizontalBar',
+ data:{
+    labels:['Open Dumping','Unsanitary Landfilling','Composting','Incineration','Others'],
+    datasets:[{
+      label:'Percentage in Practice',
+      data:[60,15,10,5,10],
+      backgroundColor:'#99906D'
+    }]
+ },
+ options:{
+   title:{
+     display:true,
+     text:'Waste Management Status',
+     fontSize:28
+   }
+ }
+})
+</script>
+</html>
