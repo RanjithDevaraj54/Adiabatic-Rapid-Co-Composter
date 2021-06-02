@@ -1,5 +1,4 @@
 # Adiabatic-composter.github.io
-:pushpin: This is my first website created using the frontend development tools
 
 :pushpin: This site is designed for the product named **Adiabatic Rapid Co-Composter**
 
